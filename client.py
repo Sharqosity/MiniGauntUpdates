@@ -9,7 +9,7 @@ PING_USERS = []
 BOT_CHANNEL = 405990872602247182
 BOT_TOKEN = ''
 SOCKET_ADDRESS = 'ws://localhost:24050/ws'
-SR_THRESHOLD = 6.0
+SR_THRESHOLD = 1.0
 COMBO_THRESHOLDS = [0.25 , 0.7, 0.8, 0.85, 0.9, 0.95, 0.96, 0.97, 0.98, 0.99]
 
 def reset_thresholds():
@@ -53,7 +53,6 @@ reset_thresholds()
 wsapp = websocket.WebSocketApp(SOCKET_ADDRESS, on_message=on_message)
 
 intents = discord.Intents.default()
-intents.message_content = True
 channel = None
 client = discord.Client(intents=intents)
 
@@ -67,12 +66,12 @@ async def send(message):
     print(message)
     await channel.send(message)
 
-socketThread = threading.Thread(target=wsapp.run_forever, args=())
-discordThread = threading.Thread(target=client.run, args=(BOT_TOKEN,))
+socketThread = threading.Thread(target=wsapp.run_forever, args=(), daemon=True)
+discordThread = threading.Thread(target=client.run, args=(BOT_TOKEN,), daemon=True)
 
 discordThread.start()
 time.sleep(5)
-print('Starting websocket')
+print('Listening to websocket')
 socketThread.start()
 
 while True:
