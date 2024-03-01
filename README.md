@@ -4,7 +4,7 @@ Websockets, discord.py
 ## Install in python
 
 ```shell
-py -3 -m pip install -U discord.py websockets
+py -3 -m pip install -U discord.py websocket
 ```
 
 # Instructions:
