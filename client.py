@@ -5,7 +5,7 @@ import threading
 import asyncio
 import time
 
-PING_USERS = [95641408530026496, 159753928290992128]
+PING_USERS = []
 BOT_CHANNEL = 405990872602247182
 BOT_TOKEN = ''
 SOCKET_ADDRESS = 'ws://localhost:24050/ws'
