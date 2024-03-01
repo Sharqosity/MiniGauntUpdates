@@ -12,6 +12,9 @@ Run gosumemory (https://github.com/l3lackShark/gosumemory)
 
 Run this discord bot script - python client.py
 
+
+# Options located in client.py
+
 PING_USERS: list of users to notify (can be empty)
 
 BOT_CHANNEL: channel to notify
