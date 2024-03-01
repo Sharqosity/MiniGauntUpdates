@@ -1,15 +1,24 @@
-# Instructions:
-Run gosumemory
+# Dependencies 
+Websockets, discord.py
 
-Run this script - python client.py
+## Install in python
+
+```shell
+py -3 -m pip install -U discord.py websockets
+```
+
+# Instructions:
+Run gosumemory (https://github.com/l3lackShark/gosumemory)
+
+Run this discord bot script - python client.py
 
 PING_USERS: list of users to notify (can be empty)
 
 BOT_CHANNEL: channel to notify
 
-BOT_TOKEN: discord bot token
+BOT_TOKEN: your discord bot token (from https://discord.com/developers/applications, your OAuth2 client secret)
 
-SOCKET_ADDRESS: gosumemory socket
+SOCKET_ADDRESS: gosumemory socket (default is localhost:24050)
 
 SR_THRESHOLD: notify if map is higher than this sr
 
